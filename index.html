@@ -61,7 +61,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 col-lg-4 col-md-3">
-                <h5>Get Hello API</h5>
+                <h5>Get Hello API 1st</h5>
             </div>
             <div class="col-8 col-lg-4 col-md-6">
             <h5>Tic Tac Toe - Arabic Version</h5>
@@ -86,14 +86,19 @@
 <script src="javascript\MyProjects.js"></script>
 <script>
     function getHello(){
-    $.ajax({
-        url: "https://azure-adelag94-apis.azurewebsites.net/api/azure-adel-apis",
-        type: "GET",
-        success: function(result){
-            console.log("good")
-         }
-        
-        })
+        var settings = {
+  "url": "https://azure-adelag94-apis.azurewebsites.net/api/azure-adel-apis?",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({"body":""}),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
     }
 </script>
 </body>
